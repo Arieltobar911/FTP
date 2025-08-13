@@ -1,0 +1,77 @@
+/* DEFAULT EVERYWERE */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style: none;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+
+.body{
+    font-family: "Open Sans", sans-serif;
+    display: grid;
+    min-height: 100dvh;
+    grid-template-rows: auto 1fr auto;
+}
+
+.sentry{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.w100{width: 100%;}
+
+/* NAV */
+
+:root{
+    --nav-height: 80px;
+    --nav-aligned-width: 1020px;
+}
+
+.nav{
+    height: var(--nav-height);
+    padding: 0 15%;
+    position: fixed;
+}
+
+.nav-cont{
+    width: calc(var(--nav-aligned-width) + 20px);
+    justify-content: space-between;
+}
+
+.nav, .btn-nav {
+    background-color: blueviolet;
+    color: white;
+}
+
+.btn{cursor: pointer;}
+
+.btn-nav{
+    height: 40px;
+    width: 80px;
+    margin: 10px;
+}
+
+.te00{
+    width: 40px;
+    font-size: 30px;
+}
+
+/* MAIN */
+
+.main{margin-top: var(--nav-height);}
+
+.principal{
+    width: var(--nav-aligned-width);
+    height: 1000px;
+    background-color: aqua;
+}
+
+/* FOOTER */
+
+.footer{
+    background-color: darkblue;
+    height: 300px;
+}
