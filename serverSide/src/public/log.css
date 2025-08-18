@@ -1,0 +1,124 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+}
+
+/* Fondo general */
+body {
+    background: linear-gradient(var(--fill), var(--fill)), linear-gradient(#FFF8D0, #FFF8D0);
+    display: flex;
+    justify-content: center;
+}
+
+:root{ 
+    --secondary: #0F52BA; 
+    --footer: #0d3f8a; 
+    --fill: #FFC06700; 
+    --primary: #FFEE8C; 
+}
+
+/* Contenedor principal */
+.login-container {
+    width: 400px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Contenedor del logo */
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 10px;
+    background-color: var(--secondary);
+    width: 175px;
+    border-radius: 15px;
+}
+
+/* Puntito del logo */
+.logo-dot { 
+    width: 14px; 
+    height: 14px; 
+    border-radius: 50%; 
+    background: var(--primary); 
+    box-shadow: 0 0 0 4px color-mix(in srgb, var(--primary) 50%, transparent); 
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    h1{
+        font-size: 30px;
+        color: white;
+    }
+}
+
+/* Caja del login */
+.login-box {
+    background-color: var(--secondary);
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.5);
+    text-align: center;
+    h1{
+        color: #f0f0f0;
+        margin-bottom: 20px;
+        font-size: 1.8rem;
+    }
+}
+
+/* Formulario */
+.login-form .input-group {
+    margin-bottom: 15px;
+    text-align: left;
+    label{
+        color: #ccc;
+        margin-bottom: 5px;
+        font-size: 0.9rem;
+    }
+}
+
+.login-form input, .login-form button{
+    width: 100%;
+    padding: 12px;
+    border-radius: 12px;
+    border: none;
+    background-color: var(--footer);
+    color: #f0f0f0;
+    font-size: 1rem;
+    outline: none;
+}
+
+/* Botón */
+.login-form button {
+    background-color: #4caf50;
+    transition: 0.3s;
+}
+
+.login-form button:hover {background-color: #45a049;}
+
+/* Enlace extra */
+.extra-links {
+    margin-top: 15px;
+    a{
+        color: #6cb2eb;
+        text-decoration: none;
+        font-size: 0.9rem;
+        &:hover{
+            text-decoration: underline;
+        }
+    }
+}
+
+/* Responsive */
+@media (width <= 480px) {
+    .login-box {padding: 20px;}
+    .login-box h1 {font-size: 1.5rem;}
+}
