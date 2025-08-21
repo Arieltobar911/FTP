@@ -4,45 +4,43 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="swiper.css">
     <title>Dashboard</title>
 </head>
 <body class="body">
     <header>
-
         <nav class="sentry nav w100">
-
             <div class="sentry nav-cont">
-
-                <button class="btn btn-nav te00" id="btn">⚙</button>
+                <button class="sam btn btn-nav te00" id="btn">⚙</button>
                 <div class="sentry logo">
                     <span class="logo-dot" aria-hidden="true"></span>
                     <h2>EcoSense</h2>
                 </div>
-
                 <ul>
                     <button class="btn btn-nav" id="guia">Info</button>
                     <button class="btn btn-nav" id="cuenta">Cuenta</button>
                 </ul>
-
             </div>
-
         </nav>
-
     </header>
 
-    <aside class="visible invisible" id="aside">
-
+    <aside class="visible invisible" id="aside" style="display: flex; justify-content: center; ">
+        <section class="licman sentry">
+            <h2>Cuenta:</h2>
+            <div class="user" style="justify-content: center;">
+                <img src="/img/download.jpg" alt="user icon" class="user-icon">
+                <p style="margin-left: 20px;"><%= name %></p> 
+            </div>
+            <div>
+                <a href="/logout" style="margin-top: 20px; margin: 20px;">Salir</a>
+                <a href="https://arieltobar911.github.io/info/" target="_blank" style="margin-top: 20px; margin: 20px;">Informacion</a>
+            </div>
+        </section>
     </aside>
 
     <main class="sentry main">
-
         <section class="sentry principal">
-
             <section class="sentry w100 up">
-
                 <div class="sentry w100 devices">
-
                     <h2>Dispositivos</h2>
                     <select name="" id="">
                         <option value="null">--sala--</option>
@@ -51,15 +49,16 @@
                         <option value="metal03">Sala 3</option>
                         <option value="metal04">Sala 4</option>
                     </select>
-
                 </div>
-
             </section>
-
             <section class="sentry w100 down">
+                <div class="desktop">
+                    <div class="inside w100" id="father"><!-- INSERTE DOM MANIPULATION AQUI (script2.js)-->
 
-                <section class="desktop">
-                    <section class="inside w100">
+                        <!-- DEBUGGING CSS/JS MATERIAL (NOT INCLUDE IN FINAL VERSION)(PLEASE CHANGE .EJS TO .HTML FOR DEBUG IF USING GO LIVE)
+
+                        <link rel="stylesheet" href="../public/styles.css">
+                        <script src="../public/script.js"></script>
 
                         <article class="article-dev">
                             <div class="sentry w100 ar-up">
@@ -69,7 +68,7 @@
                                 <h3>Proyector 1</h3> 
                                 <p>OS: None</p>
                                 <p>state: off</p>
-                                <p>TDP: 45w</p>
+                                <p>TDP: <span id="tdp">---</span></p>
                                 <div class="btns">
                                     <button class="start btn">start</button>
                                     <button class="shut btn">shut down</button>
@@ -77,126 +76,41 @@
                             </div>
                         </article>
 
-                </section>
-
-                <section class="sentry mobile">
-
-                    <section class="sentry m-up">
-                        <h2>Computadores</h2>
-                        <div class="m-container">
-
-                            <div class="swiper">
-
-                                <div class="swiper-wrapper">
-
-                                    <div class="swiper-slide">
-
-                                        <article class="article">
-                                            <div class="sentry w100 ar-up">
-                                                <img src="/img/Win10.png" alt="windows 10 device" class="logos">
-                                            </div>
-
-                                            <div class="sentry w100 ar-down">
-                                                <p>Computer 1</p>
-                                                <p>OS: Windows 10</p>
-                                                <p>state: updating</p>
-                                                <p>TDP: 102w</p>
-                                                <div class="btns">
-                                                    <button class="start btn">start</button>
-                                                    <button class="shut btn">shut down</button>
-                                                </div>
-                                            </div>
-                                        </article>
-
-                                    </div>
-
-                                    <div class="swiper-slide">
-
-                                        <article class="article">
-                                            <div class="sentry w100 ar-up">
-                                                <img src="/img/Win11.png" alt="windows 11 device" class="logos">
-                                            </div>
-
-                                            <div class="sentry w100 ar-down">
-                                                <p>Computer 2</p> 
-                                                <p>OS: Windows 11</p>
-                                                <p>state: off</p>
-                                                <p>TDP: 115w</p>
-                                                <div class="btns">
-                                                    <button class="start btn">start</button>
-                                                    <button class="shut btn">shut down</button>
-                                                </div>
-                                            </div>
-                                        </article>
-
-                                    </div>
-
-                                </div>
-
-                            </div>    
-
-                        </div>
-                    </section>
-
-                    <section class="sentry m-down">
-                        <h2>Otros dispositivos</h2>
-                        <div class="m-container">
-
-                            <div class="swiper">
-
-                                <div class="swiper-wrapper">
-
-                                    <div class="swiper-slide">
-
-                                        <article class="article">
-                                            <div class="sentry w100 ar-up">
-                                                <img src="/img/proyector.webp" alt="windows 10 device" class="logos">
-                                            </div>
-
-                                            <div class="sentry w100 ar-down">
-                                                <p>Proyector 1</p> 
-                                                <p>OS: None</p>
-                                                <p>state: off</p>
-                                                <p>TDP: 45w</p>
-                                                <div class="btns">
-                                                    <button class="start btn">start</button>
-                                                    <button class="shut btn">shut down</button>
-                                                </div>
-                                            </div>
-                                        </article>
-
-                                    </div>
-
-                                </div>
-
+                        <article class="article-dev">
+                            <div class="sentry w100 ar-up">
+                                <img src="/img/proyector.webp" alt="windows 10 device" class="logos">
                             </div>
+                            <div class="sentry w100 ar-down">
+                                <h3>Proyector 1</h3> 
+                                <p>OS: None</p>
+                                <p>state: off</p>
+                                <p>TDP: <span id="tdp">---</span></p>
+                                <div class="btns">
+                                    <button class="start btn">start</button>
+                                    <button class="shut btn">shut down</button>
+                                </div>
+                            </div>
+                        </article>
 
-                        </div>
-                    </section>
+                        -->
 
-                </section>
-
+                    </div>
+                </div>
             </section>
-
         </section>
-
     </main>
 
-    <aside class="vector bye">
-
-        <div class="sentry user">
-            <p><%= name %></p> 
+    <aside class="sentry vector bye">
+        <div class="user">
             <img src="/img/download.jpg" alt="user icon" class="user-icon">
+            <p style="margin-left: 20px;"><%= name %></p> 
         </div>
         <a href="/logout">Salir</a>
-
     </aside>
 
-    <footer class="sentry footer w100">
-        <p>© <span id="year"></span> EcoSense • Proyecto TP</p>
-    </footer>
+    <footer class="sentry footer w100"><p>© <span id="year"></span> EcoSense • Proyecto TP</p></footer>
 </body>
-<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<script src="/socket.io/socket.io.js"></script>
 <script src="/script.js"></script>
 <script src="/script2.js"></script>
 </html>

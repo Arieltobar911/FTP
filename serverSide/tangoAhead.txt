@@ -1,0 +1,57 @@
+
+
+
+
+
+CREATE TABLE dispositivos(
+	dispositivo_id INT PRIMARY KEY AUTO_INCREMENT,
+	dispositivo_nombre VARCHAR(100) NOT NULL,
+	TDP INT NOT NULL,
+	OS VARCHAR(50) NOT NULL,
+	state TINYINT,
+	alias VARCHAR(100)
+);
+
+
+state = 1/true: encendido; 0/false apagado
+
+
+
+                        <article class="article-dev">
+                            <div class="sentry w100 ar-up">
+                                <img src="/img/proyector.webp" alt="windows 10 device" class="logos">
+                            </div>
+                            <div class="sentry w100 ar-down">
+                                <h3>Proyector 1</h3> 
+                                <p>OS: None</p>
+                                <p>state: off</p>
+                                <p>TDP: <span id="tdp">---</span></p>
+                                <div class="btns">
+                                    <button class="start btn">start</button>
+                                    <button class="shut btn">shut down</button>
+                                </div>
+                            </div>
+                        </article>
+
+
+INSERT INTO dispositivos (dispositivo_nombre, TDP, OS, state, alias) VALUES
+("HP_ALLinONe", 0, "Windows 10", 1, "windows_10_device"),
+("HP_ALLinOne", 0, "Windows 11", 1, "windows_11_device" ),
+("Raspberry pi 3", 0, "linux", 1, "linux_device"),
+("Proyector", 0, "None", 1, "proyector_device");
+
+
+ SELECT COUNT(*) AS cantidad
+    FROM information_schema.columns
+    WHERE table_schema = 'ecodev'
+      AND table_name = 'dispositivos';
+
+INSERT INTO dispositivos (dispositivo_nombre, TDP, OS, state) VALUES
+("Raspberry pi 3", 0, "linux", 1);
+
+
+ALTER TABLE dispositivos
+ADD COLUMN alias VARCHAR(100);
+
+TRUNCATE TABLE dispositivos;
+

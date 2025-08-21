@@ -1,9 +1,9 @@
 import mariadb from 'mariadb';
 
 const pool  = mariadb.createPool({
-  host: "localhost", 
-  user: "root",
-  password: "2008",
+  host: "192.168.100.10", // Poner ip de la maquina host
+  user: "ariel",
+  password: "papu",
   database: "EcoDEV",
   port: 3307,
   connectionLimit: 5
